@@ -1,0 +1,17 @@
+{
+  "name": "gulp-boilerplate",
+  "version": "0.1.0",
+  "description": "Base Gulp setup using HTML5 Boilerplate, sass, jade, and other goodies.",
+  "author": "R.J. LaCount",
+  "devDependencies": {
+    "gulp": "~3.6.0",
+    "gulp-util": "~2.2.14",
+    "gulp-concat": "~2.2.0",
+    "gulp-compass": "~1.1.8",
+    "gulp-uglify": "~0.2.1",
+    "gulp-jade": "~0.4.2",
+    "gulp-jshint": "~1.5.3",
+    "gulp-livereload": "~1.2.0",
+    "tiny-lr": "0.0.5"
+  }
+}

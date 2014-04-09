@@ -1,0 +1,44 @@
+// Compass imports and partials
+
+@import "compass/css3";
+@import 'partials/normalize';
+@import 'partials/mixins';
+@import 'partials/variables';
+
+
+// Boilerplate styles (probably want to remove this)
+
+@import 'partials/boilerplate';
+
+
+
+// Styles go in here
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, Lucida Grande, sans-serif;
+  font-size: 16px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+
+
+// Breakpoint styles
+
+@media screen and (min-width: $baby-bear) {
+  @import 'baby-bear';
+}
+
+@media screen and (min-width: $mama-bear) {
+  @import 'mama-bear';
+}
+
+@media screen and (min-width: $papa-bear) {
+  @import 'papa-bear';
+}
