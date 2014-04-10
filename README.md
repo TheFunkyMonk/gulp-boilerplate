@@ -12,7 +12,7 @@ This project includes the following Gulp plugins:
 - [Jade](https://www.npmjs.org/package/gulp-jade)
 - [JsHint](https://www.npmjs.org/package/gulp-jshint)
 - [Uglify](https://www.npmjs.org/package/gulp-uglify)
-- [LiveReload](https://www.npmjs.org/package/gulp-livereload)
+- [Connect (with LiveReload)](https://www.npmjs.org/package/gulp-connect)
 
 After pulling down the repository, run the following to get started:
 
