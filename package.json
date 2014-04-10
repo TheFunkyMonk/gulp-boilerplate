@@ -11,7 +11,6 @@
     "gulp-uglify": "~0.2.1",
     "gulp-jade": "~0.4.2",
     "gulp-jshint": "~1.5.3",
-    "gulp-livereload": "~1.2.0",
     "tiny-lr": "0.0.5",
     "gulp-notify": "~1.2.5",
     "gulp-connect": "~2.0.5"
