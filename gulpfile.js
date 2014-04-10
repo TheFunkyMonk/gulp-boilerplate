@@ -2,13 +2,11 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     compass = require('gulp-compass'),
     concat = require('gulp-concat'),
+    connect = require('gulp-connect'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     notify = require('gulp-notify'),
-    uglify = require('gulp-uglify'),
-    livereload = require('gulp-livereload'),
-    lr = require('tiny-lr'),
-    server = lr();
+    uglify = require('gulp-uglify');
 
 var paths = {
     sass: { src:'components/sass/main.scss', dst: 'css/' },
@@ -24,7 +22,8 @@ gulp.task('sass', function() {
       sass: 'components/sass',
       style: 'expanded'
     }))
-    .pipe(notify('Sass compiled'));
+    .pipe(notify('Sass compiled'))
+    .pipe(connect.reload());
 });
 
 gulp.task('html', function() {
@@ -33,7 +32,8 @@ gulp.task('html', function() {
       pretty: true
     }))
     .pipe(gulp.dest(paths.jade.dst))
-    .pipe(notify('HTML compiled'));
+    .pipe(notify('HTML compiled'))
+    .pipe(connect.reload());
 });
 
 gulp.task('js', function() {
@@ -44,15 +44,18 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(concat('main.js'))
     .pipe(gulp.dest(paths.allJS.dst))
-    .pipe(notify('JavaScript compiled'));
+    .pipe(notify('JavaScript compiled'))
+    .pipe(connect.reload());
 });
 
-gulp.task('default', ['sass', 'html', 'js'], function() {
-  var server = livereload();
+gulp.task('connect', function() {
+  connect.server({
+    livereload: true
+  });
+});
+
+gulp.task('default', ['sass', 'html', 'js', 'connect'], function() {
   gulp.watch(paths.sass.src, ['sass']);
   gulp.watch(paths.jade.src, ['html']);
   gulp.watch(paths.mainJS.src, ['js']);
-  gulp.watch(['*.html', 'css/*', 'js/*'], function(e) {
-    server.changed(e.path);
-  });
 });
