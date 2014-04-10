@@ -18,3 +18,5 @@ After pulling down the repository, run the following to get started:
 
     npm install
     gulp
+
+By default, the server will load at [http://localhost:8080](http://localhost:8080).
