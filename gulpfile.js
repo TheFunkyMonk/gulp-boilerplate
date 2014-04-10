@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
+    notify = require('gulp-notify'),
     uglify = require('gulp-uglify'),
     livereload = require('gulp-livereload'),
     lr = require('tiny-lr'),
@@ -22,7 +23,8 @@ gulp.task('sass', function() {
       css: 'css',
       sass: 'components/sass',
       style: 'expanded'
-    }));
+    }))
+    .pipe(notify('Sass compiled'));
 });
 
 gulp.task('html', function() {
@@ -30,7 +32,8 @@ gulp.task('html', function() {
     .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest(paths.jade.dst));
+    .pipe(gulp.dest(paths.jade.dst))
+    .pipe(notify('HTML compiled'));
 });
 
 gulp.task('js', function() {
@@ -40,7 +43,8 @@ gulp.task('js', function() {
   gulp.src(paths.allJS.src)
     .pipe(uglify())
     .pipe(concat('main.js'))
-    .pipe(gulp.dest(paths.allJS.dst));
+    .pipe(gulp.dest(paths.allJS.dst))
+    .pipe(notify('JavaScript compiled'));
 });
 
 gulp.task('default', ['sass', 'html', 'js'], function() {
