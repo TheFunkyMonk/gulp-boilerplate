@@ -17,6 +17,7 @@ This project includes the following Gulp plugins:
 After pulling down the repository, run the following to get started:
 
     npm install
+    gem install compass
     gulp
 
 By default, the server will load at [http://localhost:8080](http://localhost:8080).
