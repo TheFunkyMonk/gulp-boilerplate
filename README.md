@@ -14,10 +14,11 @@ This project includes the following Gulp plugins:
 - [Uglify](https://www.npmjs.org/package/gulp-uglify)
 - [Connect (with LiveReload)](https://www.npmjs.org/package/gulp-connect)
 
-After pulling down the repository, run the following to get started:
+After pulling down the repository, cd into the working directory and run the following to get started:
 
     npm install
+    npm install -g gulp
     gem install compass
     gulp
 
-By default, the server will load at [http://localhost:8080](http://localhost:8080).
+By default, the LiveReload server will load up on port 8080 (adjustable in gulpfile), accessible via localhost or your machine's IP address through a mobile browser on the same network.
