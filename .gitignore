@@ -8,6 +8,7 @@ Thumbs.db
 .sass-cache
 
 # Other #
-css
-js
-node_modules
+/css
+/js
+/node_modules
+/index.html
