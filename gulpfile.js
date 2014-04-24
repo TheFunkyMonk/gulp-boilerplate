@@ -9,8 +9,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify');
 
 var paths = {
-    sass: { src:'components/sass/main.scss', dst: 'css/' },
-    jade: { src: 'components/jade/*.jade', dst: './' },
+    sass: { src:'components/sass/main.scss', dst: 'css/', wch: ['components/sass/*.scss', 'components/sass/partials/*.scss'] },
+    jade: { src: 'components/jade/*.jade', dst: './', wch: ['components/jade/*.jade', 'components/jade/partials/*.jade'] },
     mainJS: { src: 'components/js/main.js' },
     allJS: { src: ['components/js/lib/*.js', 'components/js/*.js'], dst: 'js/' }
 };
@@ -56,7 +56,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('default', ['sass', 'html', 'js', 'connect'], function() {
-  gulp.watch(paths.sass.src, ['sass']);
-  gulp.watch(paths.jade.src, ['html']);
+  gulp.watch(paths.sass.wch, ['sass']);
+  gulp.watch(paths.jade.wch, ['html']);
   gulp.watch(paths.mainJS.src, ['js']);
 });
