@@ -6,14 +6,13 @@ var gulp = require('gulp'),
     jade = require('gulp-jade'),
     jshint = require('gulp-jshint'),
     notify = require('gulp-notify'),
-    uglify = require('gulp-uglify');
-
-var paths = {
-    sass: { src:'components/sass/main.scss', dst: 'css/', wch: ['components/sass/*.scss', 'components/sass/partials/*.scss'] },
-    jade: { src: 'components/jade/*.jade', dst: './', wch: ['components/jade/*.jade', 'components/jade/partials/*.jade'] },
-    mainJS: { src: 'components/js/main.js' },
-    allJS: { src: ['components/js/lib/*.js', 'components/js/*.js'], dst: 'js/' }
-};
+    uglify = require('gulp-uglify'),
+    paths = {
+      sass: { src:'components/sass/main.scss', dst: 'css/', wch: 'components/sass/**/*' },
+      jade: { src: 'components/jade/*.jade', dst: './', wch: 'components/jade/**/*' },
+      mainJS: { src: 'components/js/main.js' },
+      allJS: { src: 'components/js/**/*', dst: 'js/' }
+    };
 
 gulp.task('sass', function() {
   gulp.src(paths.sass.src)
