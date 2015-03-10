@@ -7,7 +7,6 @@ Personal boilerplate setup for projects, using [gulp.js](http://gulpjs.com/), [H
 This project includes the following Gulp plugins:
 
 - [Sass](https://www.npmjs.org/package/gulp-sass)
-- [Compass](https://www.npmjs.org/package/gulp-compass)
 - [Concat](https://www.npmjs.org/package/gulp-concat)
 - [Jade](https://www.npmjs.org/package/gulp-jade)
 - [JsHint](https://www.npmjs.org/package/gulp-jshint)
@@ -18,7 +17,6 @@ After pulling down the repository, cd into the working directory and run the fol
 
     npm install
     npm install -g gulp
-    gem install compass
     gulp
 
 By default, the LiveReload server will load up on port 8080 (adjustable in gulpfile), accessible via localhost or your machine's IP address through a mobile browser on the same network.
